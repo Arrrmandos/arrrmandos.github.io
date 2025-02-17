@@ -1,6 +1,6 @@
 import telebot;
 from telebot import types
-bot = telebot.TeleBot('7324357871:AAE3oIZ-akKAEqs5RrWqqVY9JwnBBsNbMzQ')
+bot = telebot.TeleBot('')
 @bot.message_handler(content_types=['text'])
 def get_text_messages(message):
      if message.text == "Приветики":
