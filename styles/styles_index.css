@@ -1,0 +1,894 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стили для навигации, Шапка */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-image: url('../img/bumaga_brown.png');
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    flex-wrap: nowrap; /* Запрещаем перенос элементов */
+}
+
+header.scrolled {
+    background-image: url('../img/bumaga_brown.png');
+    padding: 15px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.section-item {
+    font-size: 16px;
+    color: #6b7280;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.section-item:hover {
+    color: #3b82f6;
+}
+
+.section-item.active {
+    color: #ffffff;
+}
+
+.nav-links a {
+    color: #d5bda3;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #da8d88;
+}
+
+/* Корзина */
+.cart-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #303e81;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.cart-section:hover {
+    background-color: #4f64ca;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.cart-icon {
+    position: relative;
+    font-size: 18px;
+    color: #ffffff;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ee483c;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cart-text {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Стили для лого и рыбок*/
+.logorybky {
+    height: 332px;
+    background-size: cover;
+    background-image: url('../img/bumaga_blue.png');
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.image-container {
+    position: relative;  
+    width: 500px;
+    height: 310px;
+}
+
+.logorybky-kontent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* расстояние между картинками */
+    width: 100%;
+}
+
+.left-img {
+    margin-right: auto; /* прижимает к левому краю */
+    width: 500px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+}
+
+.center-img {
+    width: 711px; 
+    height: 400px;
+    object-fit: cover;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+.right-img {
+    margin-left: auto; /* прижимает к правому краю */
+    width: 500px;
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.5));
+}
+
+.logorybky h1 {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.logorybky p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: #d5bda3;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}       
+
+/* Стили для героя */
+.hero {
+    height: 60vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url('../img/bumaga_brown.png');
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .container {
+    height: 100%;
+    position: relative;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+/* Левая картинка - строго по левому краю и внизу */
+.left-image {
+    position: absolute;
+    left: 0;
+    bottom: 0; /* Прижимаем к низу */
+    width: auto;
+    height: 90%; /* Увеличиваем высоту, чтобы доставала до низа */
+    max-height: 500px;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    margin-left: calc((100vw - 1200px) / -2); /* Выдвигаем за контейнер */
+}
+
+.left-image img {
+    height: 100%;
+    width: auto;
+    display: block;
+    max-width: none;
+    object-fit: contain;
+}
+
+/* Правая картинка - строго по правому краю и внизу */
+.right-image {
+    position: absolute;
+    right: 0;
+    bottom: 0; /* Прижимаем к низу */
+    width: auto;
+    height: 90%; /* Увеличиваем высоту, чтобы доставала до низа */
+    max-height: 500px;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+    margin-right: calc((100vw - 1200px) / -2); /* Выдвигаем за контейнер */
+}
+
+.right-image img {
+    height: 100%;
+    width: auto;
+    display: block;
+    max-width: none;
+    object-fit: contain;
+}
+
+/* Контент по центру */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 20px;
+    width: 100%;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    color: #d5bda3;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-bottom: 40px;
+    color: #d5bda3;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #303e81;
+    color: #ffffff;
+    padding: 18px 45px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px #131833;
+}
+
+.cta-button:hover {
+    background-color: #4f64ca;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Адаптивность для героя */
+@media (max-width: 1400px) {
+    .left-image,
+    .right-image {
+        height: 85%;
+        max-height: 450px;
+    }
+    
+    .left-image {
+        margin-left: -50px;
+    }
+    
+    .right-image {
+        margin-right: -50px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .left-image,
+    .right-image {
+        height: 80%;
+        max-height: 400px;
+    }
+    
+    .left-image {
+        margin-left: -30px;
+    }
+    
+    .right-image {
+        margin-right: -30px;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero p {
+        font-size: 1.3rem;
+    }
+    
+    .left-image,
+    .right-image {
+        height: 75%;
+        max-height: 350px;
+    }
+    
+    .left-image {
+        margin-left: -20px;
+    }
+    
+    .right-image {
+        margin-right: -20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .cta-button {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+    }
+    
+    /* На мобильных скрываем боковые картинки */
+    .left-image,
+    .right-image {
+        display: none;
+    }
+    
+    .hero-content {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Стили для секций */
+.section {
+    padding: 100px 0;
+    background-image: url('../img/bumaga_blue.png');
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #e6f1ff;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 3px;
+    background-color: #d5bda3;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Стили для галереи */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.gallery-item {
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, #4f64ca, transparent);
+    padding: 20px;
+    color: #fdfdfd;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.gallery-item:hover .overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Стили для футера */
+footer {
+    background-image: url('../img/bumaga_brown.png');
+    padding: 60px 0 30px;
+    text-align: center;
+}
+
+.footer-img {
+    width: 90px;
+    height: 60px;
+}
+
+.footer-text {
+    color: #d5bda3;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background-color: #303e81;
+    color: #d5bda3;
+    border-radius: 50%;
+    margin: 0 10px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #d5bda3;
+    color: #303e81;
+    transform: translateY(-5px);
+}
+
+.copyright {
+    color: #d5bda3;
+    font-size: 14px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(136, 146, 176, 0.2);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .header {
+        padding: 12px 25px;
+    }
+    
+    .sections {
+        gap: 30px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .hero p {
+        font-size: 1.3rem;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+    
+    .sections {
+        width: 100%;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    
+    .cart-section {
+        align-self: flex-end;
+        margin-top: 10px;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+    
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero p {
+        font-size: 1.1rem;
+    }
+    
+    .cta-button {
+        padding: 15px 35px;
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .logorybky-kontent {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .left-img,
+    .center-img,
+    .right-img {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .center-img {
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px 15px;
+    }
+    
+    .sections {
+        gap: 15px;
+    }
+    
+    .section-item {
+        font-size: 14px;
+    }
+    
+    .cart-section {
+        padding: 8px 15px;
+    }
+    
+    .cart-text {
+        font-size: 14px;
+    }
+    
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 70px 0;
+    }
+}
+
+/* Анимации */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 1s ease forwards;
+}
+
+.delay-1 {
+    animation-delay: 0.2s;
+}
+
+.delay-2 {
+    animation-delay: 0.4s;
+}
+
+/* Эффект пузырьков */
+.bubbles {
+    position: fixed; /* Фиксируем на весь экран */
+    width: 100%;
+    height: 100vh; /* На всю высоту окна */
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -100px; /* Начинаются ниже футера */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: rise 15s infinite ease-in; /* Увеличиваем время анимации */
+}
+
+/* Эффект пузырьков */
+.bubbles {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.bubble {
+    position: absolute;
+    bottom: -150px; /* Еще ниже начинаем */
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    animation: rise 20s infinite linear;
+    box-shadow: 
+        0 0 10px rgba(255, 255, 255, 0.3),
+        inset 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+/* Большие пузыри (40-80px) */
+.bubble.large {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.08);
+    animation-duration: 25s;
+    animation-timing-function: ease-out;
+}
+
+/* Средние пузыри (20-40px) */
+.bubble.medium {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.12);
+    animation-duration: 20s;
+}
+
+/* Мелкие пузыри (5-20px) */
+.bubble.small {
+    width: 12px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+    animation-duration: 15s;
+    animation-timing-function: ease-in;
+}
+
+/* Анимация для больших пузырей - медленнее и с покачиванием */
+@keyframes rise-large {
+    0% {
+        bottom: -150px;
+        transform: translateX(0) scale(1);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    50% {
+        transform: translateX(80px) scale(1.1);
+        opacity: 0.6;
+    }
+    80% {
+        transform: translateX(40px) scale(1.05);
+        opacity: 0.4;
+    }
+    100% {
+        bottom: 100vh;
+        transform: translateX(-60px) scale(1.2);
+        opacity: 0;
+    }
+}
+
+/* Анимация для средних пузырей */
+@keyframes rise-medium {
+    0% {
+        bottom: -150px;
+        transform: translateX(0) scale(1);
+        opacity: 0;
+    }
+    15% {
+        opacity: 0.4;
+    }
+    60% {
+        transform: translateX(120px) scale(1.15);
+        opacity: 0.7;
+    }
+    100% {
+        bottom: 100vh;
+        transform: translateX(-80px) scale(1.25);
+        opacity: 0;
+    }
+}
+
+/* Анимация для мелких пузырей - быстрее */
+@keyframes rise-small {
+    0% {
+        bottom: -150px;
+        transform: translateX(0) scale(1);
+        opacity: 0;
+    }
+    5% {
+        opacity: 0.5;
+    }
+    70% {
+        transform: translateX(150px) scale(1.3);
+        opacity: 0.8;
+    }
+    100% {
+        bottom: 100vh;
+        transform: translateX(-100px) scale(1.4);
+        opacity: 0;
+    }
+}
+
+/* Применяем разные анимации */
+.bubble.large {
+    animation-name: rise-large;
+}
+
+.bubble.medium {
+    animation-name: rise-medium;
+}
+
+.bubble.small {
+    animation-name: rise-small;
+}
+
+/* Добавляем больше вариаций через nth-child */
+.bubble:nth-child(4n) {
+    animation-delay: 0s;
+    left: 5%;
+}
+
+.bubble:nth-child(4n+1) {
+    animation-delay: 1s;
+    left: 15%;
+}
+
+.bubble:nth-child(4n+2) {
+    animation-delay: 2s;
+    left: 25%;
+}
+
+.bubble:nth-child(4n+3) {
+    animation-delay: 3s;
+    left: 35%;
+}
+
+/* Дополнительные стили для более плотного заполнения */
+.bubble:nth-child(8n) {
+    left: 45%;
+    animation-delay: 4s;
+}
+
+.bubble:nth-child(8n+1) {
+    left: 55%;
+    animation-delay: 5s;
+}
+
+.bubble:nth-child(8n+2) {
+    left: 65%;
+    animation-delay: 6s;
+}
+
+.bubble:nth-child(8n+3) {
+    left: 75%;
+    animation-delay: 7s;
+}
+
+.bubble:nth-child(12n) {
+    left: 85%;
+    animation-delay: 8s;
+}
+
+.bubble:nth-child(12n+1) {
+    left: 95%;
+    animation-delay: 9s;
+}
+
+/* Эффект мерцания для некоторых пузырей */
+.bubble:nth-child(3n) {
+    animation: rise-large 25s infinite ease-in-out, twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.3;
+        box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+        opacity: 0.7;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUaHOme</title>
+    <link rel="stylesheet" href="./styles/styles_index.css">
+    <link rel="stylesheet" href="./styles/media.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> 
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="header-container">
+            <!-- Навигация -->
+            <div class="nav-links">
+                <a href="#home" class="section-item active">Главная</a>
+                <a href="#katalog" class="section-item">Каталог</a>
+                <a href="#new" class="section-item">Новичкам</a>
+                <a href="#otzyvy" class="section-item">Отзывы</a>
+                <a href="#contact" class="section-item">Контакты</a>
+            </div>
+        </div>
+        <!-- Корзина -->
+        <div class="cart-section">
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <div class="cart-count">3</div>
+            </div>
+            <div class="cart-text">Корзина</div>
+        </div>
+    </header>
+
+    <!-- Лого рыбки -->    
+    <section class="logorybky" id="home">
+        <div class="bubbles" id="bubbles-container"></div>
+        <div class="container">
+            <div class="logorybky-kontent">
+                <div class="image-container">
+                    <img src="./img/vodorosli_mnogo.png" class="left-img">
+                </div>
+                <img src="./img/logo sait rybky bezh.png" class="center-img">
+                <div class="image-container">
+                    <img src="./img/vodorosli_mnogo2.png" class="right-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Герой-секция -->
+<section class="hero" id="home">
+    <div class="container">
+        <div class="wrapper">
+            <div class="left-image">
+                <img src="./img/rybka1.png" alt="Слева">
+            </div>
+            
+            <div class="hero-content">
+                <h1 class="fade-in">Окунитесь в мир аквариумистики!</h1>
+                <p class="fade-in delay-1">Создайте свою подводную вселенную прямо дома</p>
+                <a href="#new" class="cta-button fade-in delay-2">Начать путешествие</a>
+            </div>
+            
+            <div class="right-image">
+                <img src="./img/rybka2.png" alt="Справа">
+            </div>
+        </div>
+    </div>
+</section>
+    
+    <!-- О нас -->
+    <section class="section" id="new">
+        <div class="container">
+            <h2 class="section-title">Что такое аквариумистика?</h2>
+            <div class="about-content">
+                <p style="font-size: 1.2rem; line-height: 1.8; max-width: 900px; margin: 0 auto 40px; text-align: center; color:#d5bda3;">
+                    Аквариумистика — это увлекательное хобби, которое позволяет воссоздать частичку подводного мира в вашем доме. 
+                    Это искусство создания и поддержания биологического баланса в закрытой водной экосистеме. 
+                    Аквариумистика сочетает в себе элементы дизайна, биологии и экологии.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px;">
+                    <div style="background-color:#4f64ca; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                        <i class="fas fa-water" style="font-size: 40px; color: #d5bda3; margin-bottom: 20px;"></i>
+                        <h3 style="margin-bottom: 15px; color: #e6f1ff;">Умиротворение</h3>
+                        <p style="color: #e6f1ff;">Наблюдение за аквариумом способствует релаксации, рыбки снижают стресс</p>
+                    </div>
+                    <div style="background-color: #4f64ca; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                        <i class="fas fa-leaf" style="font-size: 40px; color: #d5bda3; margin-bottom: 20px;"></i>
+                        <h3 style="margin-bottom: 15px; color: #e6f1ff;">Забота</h3>
+                        <p style="color: #e6f1ff;">Возможность дарить любовь маленькому созданию</p>
+                    </div>
+                    <div style="background-color: #4f64ca; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);">
+                        <i class="fas fa-gem" style="font-size: 40px; color: #d5bda3; margin-bottom: 20px;"></i>
+                        <h3 style="margin-bottom: 15px; color: #e6f1ff;">Эстетика</h3>
+                        <p style="color: #e6f1ff;">Аквариум становится живым произведением искусства в интерьере, наслаждение для глаз</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Галерея -->
+    <section class="section" id="katalog">
+        <div class="container">
+            <h2 class="section-title">Каталог</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="./img/rybka kat.png">
+                    <div class="overlay">
+                        <h3>Рыбки и растения</h3>
+                        <p>Для маленьких и больших аквариумов</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/aquarium.png" alt="Морской аквариум">
+                    <div class="overlay">
+                        <h3>Аквариумы и оборудование</h3>
+                        <p>Для комфорта и уюта</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/rybka_korm.png" alt="Корм">
+                    <div class="overlay">
+                        <h3>Корма и подкормки</h3>
+                        <p>Все для сбалансированного питания</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Футер -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-logo">
+                <img src="./img/logo sait rybky bezh2.png" class="footer-img">
+            </div>
+            <p class="footer-text">
+                Аквариумистика — это больше, чем хобби. Это способ прикоснуться к тайнам подводного мира, 
+                не выходя из дома. Начните своё путешествие в мир аквариумистики сегодня!
+            </p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="#"><i class="fab fa-telegram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="copyright">
+                &copy; 2025 AQUaHOme. Все права защищены. by AdRy
+            </div>
+        </div>
+    </footer>
+    
+    <script src="./scripts/index.js"></script>
+</body>
+</html>
